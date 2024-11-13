@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Host=localhost:5432;Database=BTLDB;user id=postgres; Password=abc.1234" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -Force -Context BTLDBScaffoldContext
