@@ -20,7 +20,7 @@ public partial class BTLDBScaffoldContext : DbContext
     public virtual DbSet<Discount> Discounts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql(ConnectionString);
+        => optionsBuilder.UseSqlServer(ConnectionString);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

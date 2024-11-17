@@ -33,12 +33,12 @@ AddDbContext(builder);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+//if (app.Environment.IsDevelopment())
+//{
 
+//}
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCors("CorsPolicy");
 app.MapControllers();
 
@@ -48,7 +48,7 @@ void AddDbContext(WebApplicationBuilder webApplicationBuilder)
 {
     webApplicationBuilder.Services.AddDbContext<DbContext, ApplicationContext>(options =>
     {
-        options.UseNpgsql(webApplicationBuilder.Configuration.GetConnectionString("ConnectionString"));
+        options.UseSqlServer(webApplicationBuilder.Configuration.GetConnectionString("ConnectionString"));
 
 
         if (webApplicationBuilder.Environment.IsProduction()) return;
